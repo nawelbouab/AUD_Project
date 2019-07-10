@@ -1,0 +1,16 @@
+#!/bin/bash
+
+rm graphsearchBin
+gcc -std=c99 -c *.c -w
+
+if [ $1 == "--bfs" ]
+then
+gcc -std=c99 main.o graphsearch.o queue.o permute.o graph.o bfs.o linkedlisttraversal.o linkedlistresultat.o -o graphsearchBin -w
+./graphsearchBin $2
+fi
+
+if [ $1 == "--dfs" ]
+then
+gcc -std=c99 main.o graphsearch.o stack.o permute.o graph.o bfs.o linkedlisttraversal.o linkedlistresultat.o -o graphsearchBin -w
+./graphsearchBin $2
+fi
